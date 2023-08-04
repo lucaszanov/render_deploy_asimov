@@ -18,9 +18,9 @@ load_figure_template("minty")
 app = dash.Dash(
     external_stylesheets=[dbc.themes.MINTY]
 )
-Server = app.server
+server = app.server
 
-df_data = pd.read_csv("supermarket_sales.csv")
+df_data = pd.read_csv("assets/supermarket_sales.csv")
 df_data["Date"] = pd.to_datetime(df_data["Date"])
 
 # ================= Layout =================== #
@@ -109,4 +109,4 @@ def render_graphs(cities, main_variable):
 
 if __name__ == "__main__":
     # app.run_server(port=8050, debug=True)
-    app.run_server(debug=False, port=8080, host='0.0.0.0')
+    app.run_server(debug=False, port=8080)
